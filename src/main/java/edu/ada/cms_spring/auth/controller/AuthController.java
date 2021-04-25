@@ -1,6 +1,6 @@
-package edu.ada.cms_spring.controller;
+package edu.ada.cms_spring.auth.controller;
 
-import edu.ada.cms_spring.model.LoginModel;
+import edu.ada.cms_spring.auth.model.LoginModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
