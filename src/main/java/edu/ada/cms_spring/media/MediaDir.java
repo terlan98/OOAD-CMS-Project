@@ -1,6 +1,6 @@
 package edu.ada.cms_spring.media;
 
-import edu.ada.auth.User;
+import edu.ada.cms_spring.auth.model.User;
 
 import java.net.URI;
 import java.util.ArrayList;

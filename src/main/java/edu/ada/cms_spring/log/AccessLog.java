@@ -1,6 +1,6 @@
 package edu.ada.cms_spring.log;
 
-import edu.ada.auth.User;
+import edu.ada.cms_spring.auth.model.User;
 
 public class AccessLog extends Log
 {

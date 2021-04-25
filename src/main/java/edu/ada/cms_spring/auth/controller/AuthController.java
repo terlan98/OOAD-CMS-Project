@@ -1,6 +1,6 @@
 package edu.ada.cms_spring.auth.controller;
 
-import edu.ada.cms_spring.auth.model.LoginModel;
+import edu.ada.cms_spring.auth.model.dto.LoginModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class AuthController
 {
 	@GetMapping
-	String getSomething(Model model) // model is to attach stuff that can be used in the template
+	String getLoginPage(Model model) // model is to attach stuff that can be used in the template
 	{
 		LoginModel loginModel = new LoginModel();
 		model.addAttribute("loginModel", loginModel);

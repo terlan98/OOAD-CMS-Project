@@ -1,6 +1,6 @@
 package edu.ada.cms_spring.log;
 
-import edu.ada.media.Media;
+import edu.ada.cms_spring.media.Media;
 
 public class MediaLog extends Log
 {

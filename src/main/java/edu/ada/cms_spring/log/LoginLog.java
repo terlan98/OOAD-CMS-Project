@@ -1,6 +1,6 @@
 package edu.ada.cms_spring.log;
 
-import edu.ada.auth.LoginAttempt;
+import edu.ada.cms_spring.auth.model.LoginAttempt;
 
 public class LoginLog extends Log
 {

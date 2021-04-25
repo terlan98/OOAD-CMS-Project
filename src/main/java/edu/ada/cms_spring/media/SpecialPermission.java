@@ -1,7 +1,7 @@
 package edu.ada.cms_spring.media;
 
 
-import edu.ada.cms_spring.auth.User;
+import edu.ada.cms_spring.auth.model.User;
 
 import java.util.Date;
 

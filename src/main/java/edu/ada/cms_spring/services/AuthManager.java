@@ -1,6 +1,6 @@
 package edu.ada.cms_spring.services;
 
-import edu.ada.auth.Token;
+import edu.ada.cms_spring.auth.Token;
 
 public class AuthManager
 {
