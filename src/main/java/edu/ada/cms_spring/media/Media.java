@@ -13,7 +13,7 @@ public class Media
 	private int size;
 	
 	private String name;
-	private URI path; //TODO Should we create a Path class?
+	private URI path;
 	private Date updateTime;
 	private User owner;
 	private List<SpecialPermission> permissions;
@@ -34,7 +34,6 @@ public class Media
 	
 	public List<Byte> read()
 	{
-		//TODO
 		return null;
 	}
 	

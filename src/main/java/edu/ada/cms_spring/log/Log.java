@@ -20,7 +20,6 @@ public class Log
 	
 	public Log parse(String s)
 	{
-		//TODO What does this function do?
 		return this;
 	}
 	

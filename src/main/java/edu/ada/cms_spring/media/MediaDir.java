@@ -31,7 +31,6 @@ public class MediaDir
 		this.updateTime = new Date();
 	}
 	
-	//TODO change in CD
 	public void deleteMedia(Media media)
 	{
 		this.media.remove(media);

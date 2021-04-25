@@ -1,9 +1,11 @@
 package edu.ada.cms_spring.comment;
 
 import edu.ada.cms_spring.auth.model.User;
+import lombok.Data;
 
 import java.util.Date;
 
+@Data
 public class Comment
 {
 	private Date dateUpdated;
@@ -22,43 +24,17 @@ public class Comment
 		this.editedBy = user;
 	}
 	
-	//TODO Why should it return a Comment object?
-	//TODO I added a User parameter
-	public void edit(String message, User user)
+	public Comment edit(String message, User user)
 	{
 		this.message = message;
 		this.editedBy = user;
 		this.dateUpdated = new Date();
+		return this;
 	}
 	
-	//TODO Why should it return a Comment object?
-	public void delete()
+	public Comment delete()
 	{
+		return this;
 		//TODO delete from DB
-	}
-	
-	public User getUser()
-	{
-		return user;
-	}
-	
-	public Date getDateCreated()
-	{
-		return dateCreated;
-	}
-	
-	public Date getDateUpdated()
-	{
-		return dateUpdated;
-	}
-	
-	public String getMessage()
-	{
-		return message;
-	}
-	
-	public User getEditedBy()
-	{
-		return editedBy;
 	}
 }

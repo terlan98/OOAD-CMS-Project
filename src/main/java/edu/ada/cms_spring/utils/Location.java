@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-//TODO add to CD
 @Entity @Data
 @NoArgsConstructor
 public class Location
@@ -17,10 +16,10 @@ public class Location
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private Long xCoordinate;
-	private Long yCoordinate;
+	private Double xCoordinate;
+	private Double yCoordinate;
 	
-	public Location(Long xCoordinate, Long yCoordinate)
+	public Location(Double xCoordinate, Double yCoordinate)
 	{
 		this.xCoordinate = xCoordinate;
 		this.yCoordinate = yCoordinate;
