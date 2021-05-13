@@ -16,7 +16,7 @@ public class User
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private String id;
 	private String name;
 	
 	@CreationTimestamp
@@ -31,7 +31,7 @@ public class User
 	@OneToOne
 	private Avatar avatar;
 	
-	public User(Long id, String name, PrivilegeLevel level, UserAuth auth, Avatar avatar)
+	public User(String id, String name, PrivilegeLevel level, UserAuth auth, Avatar avatar)
 	{
 		this.id = id;
 		this.name = name;

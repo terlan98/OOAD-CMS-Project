@@ -15,9 +15,9 @@ public class UserAuth
 {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private String id;
 	
-	private Long userId;
+	private String userId;
 	private String primaryEmail;
 	private String password;
 	
@@ -31,7 +31,7 @@ public class UserAuth
 	@OneToMany
 	private final List<LoginAttempt> logins = new ArrayList<>(1);
 	
-	public UserAuth(Long id, Long userId, String primaryEmail, String password)
+	public UserAuth(String id, String userId, String primaryEmail, String password)
 	{
 		this.id = id;
 		this.userId = userId;
