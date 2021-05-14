@@ -1,7 +1,6 @@
 package edu.ada.cms_spring.auth.model;
 
 
-import edu.ada.cms_spring.auth.PrivilegeLevel;
 import edu.ada.cms_spring.utils.Location;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link th:href="@{auth.css}" rel="stylesheet"/>
+    <link th:href="@{login.css}" rel="stylesheet"/>
     <link th:href="@{bootstrap.min.css}" rel="stylesheet"/>
     <title>CMS – Welcome</title>
 </head>
 
 <body class="bg-dark">
-<form class="form-signin" th:action="@{/submit}" th:object="${loginModel}" method="post">
-    <h1 class="h1 mb-5 font-weight-bold text-light text-center">CMS Name</h1>
+<form class="form-signin" th:action="@{/submit-login}" th:object="${loginModel}" method="post">
+    <div class="text-center">
+        <img class="img-fluid" style="width: 50%; height: 50%" src="img/logo.png" alt="Logo">
+    </div>
+    <h1 class="h1 mb-5 font-weight-bold text-light text-center">ShareThis</h1>
     <h3 class="h3 mb-3 font-weight-bold text-light text-center">Log in</h3>
+
+    <div th:if="${error} != null" class="mb-2 alert alert-danger" role="alert">
+        <span th:text="${error}"></span>
+    </div>
 
     <label for="inputEmail" class="sr-only"></label>
     <h6 class="h6 mb-1 text-muted">E-MAIL</h6>
@@ -21,8 +28,8 @@
     <h6 class="h6 mb-1 text-muted">PASSWORD</h6>
     <input type="password" id="inputPassword" class="form-control p-2" th:field="*{password}" required>
 
-    <div class="checkbox mb-3">
-        <label class="mt-3 text-muted text-left">
+    <div class="checkbox mt-3 mb-3">
+        <label class="text-muted text-left">
             <input type="checkbox" value="remember-me"> Remember me
         </label>
     </div>
@@ -31,7 +38,12 @@
         <button class="btn btn-primary btn-lg btn-block" type="submit">Log in</button>
     </div>
 
-    <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+    <div class="mt-3 d-grid gap-1">
+        <a class="text-info text-center" th:href="@{/register}" th:method="get">First time? Click to register</a>
+    </div>
+
+
+    <p class="mt-5 mb-3 text-muted text-center">OOAD Team 4 &copy; 2020</p>
 </form>
 </body>
 

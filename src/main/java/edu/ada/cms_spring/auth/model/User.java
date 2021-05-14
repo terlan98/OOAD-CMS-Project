@@ -1,9 +1,9 @@
 package edu.ada.cms_spring.auth.model;
 
-import edu.ada.cms_spring.auth.PrivilegeLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.net.URL;
@@ -14,30 +14,30 @@ import java.util.Date;
 @Table(name = "users")
 public class User
 {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Id @GeneratedValue(generator="system-uuid")
+	@GenericGenerator(name="system-uuid", strategy = "uuid")
 	private String id;
 	private String name;
+	
+	@Column(unique = true)
+	private String email;
+	
+	private String password;
+	private PrivilegeLevel level;
 	
 	@CreationTimestamp
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createdTime;
 	
-	private PrivilegeLevel level;
+//	@OneToOne
+//	private Avatar avatar;
 	
-	@ManyToOne
-	private UserAuth auth;
-	
-	@OneToOne
-	private Avatar avatar;
-	
-	public User(String id, String name, PrivilegeLevel level, UserAuth auth, Avatar avatar)
+	public User(String name, String email, String password, PrivilegeLevel level)
 	{
-		this.id = id;
 		this.name = name;
+		this.email = email;
+		this.password = password;
 		this.level = level;
-		this.auth = auth;
-		this.avatar = avatar;
 	}
 	
 	public User changeAvatar(URL url)

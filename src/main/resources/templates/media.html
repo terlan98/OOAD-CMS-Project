@@ -1,50 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ShareThis – Media Library</title>
+    <link th:href="@{bootstrap.min.css}" rel="stylesheet"/>
+    <link th:href="@{media.css}" rel="stylesheet"/>
 </head>
-<body>
-<body>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1> Media </h1>
-        </div>
+
+<form th:action="@{/logout}" method="get">
+    <button class='btn btn-danger float-end' style="margin-right: 6em" type="submit">Log out</button>
+</form>
+
+<article class="video-sec-wrap">
+    <div class="video-sec">
+        <p class="video-sec-title">Media Library</p>
+        <ul class="video-sec-middle" id="vid-grid">
+            <li th:each="m : ${media}" class="thumb-wrap"><a th:href="@{/media/playback/mp4/{id}(id=${m.path})}">
+                <img class="thumb" th:src="@{${'img/thumbnails/' + m.thumbnailName + '.jpg'}}" alt="">
+
+                <div class="thumb-info">
+                    <p class="thumb-title" th:text="${m.title}"></p>
+                    <p class="thumb-user">Username</p>
+                    <p class="thumb-text" th:text="${m.duration}"></p>
+                </div>
+            </a></li>
+            <li class="thumb-wrap"><a href="#">
+                <img class="thumb" th:src="@{${'img/addContentButton.jpg'}}" alt="">
+                <div class="thumb-info">
+                    <p class="thumb-title text-center">Add new content</p>
+                    <p class="thumb-user text-center">Click to add something new</p>
+                </div>
+            </a></li>
+        </ul>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>  </th>
-                    <th> Title </th>
-                    <th> Duration </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:if="${media.empty}">
-                    <td colspan="3"> No Media Available </td>
-                </tr>
-                <tr th:each="m : ${media}">
-                    <td>
-                        <a id="photoButton" th:href="@{'/invincible.jpg'}">
-                            <img th:src="@{'/invincible.jpg'}">
-                        </a>
-                    </td>
-                    <td>
-                        <a th:href="@{/media/playback/mp4/{id}(id=${m.path})}"><span th:text="${m.title}"></span></a>
-                    </td>
-                    <td><span th:text="${m.duration}"> Duration </span></td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-<!--        <div class="col-md-6">-->
-<!--            <a class="btn btn-success" href="#" th:href="@{/books/create}"> Add Books </a>-->
-<!--            <a class="btn btn-primary" href="#" th:href="@{/books/edit}" th:classappend="${media.empty} ? 'disabled' : ''"> Edit Books </a>-->
-<!--        </div>-->
-    </div>
-</div>
-</body>
+</article>
+
+<p class="mt-4 text-muted text-center">OOAD Team 4 &copy; 2020</p>
+
 </html>

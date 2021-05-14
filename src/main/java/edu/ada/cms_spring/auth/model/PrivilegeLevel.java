@@ -1,4 +1,4 @@
-package edu.ada.cms_spring.auth;
+package edu.ada.cms_spring.auth.model;
 
 public enum PrivilegeLevel
 {

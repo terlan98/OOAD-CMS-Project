@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link th:href="@{login.css}" rel="stylesheet"/>
+    <link th:href="@{bootstrap.min.css}" rel="stylesheet"/>
+    <title>CMS – Welcome</title>
+</head>
+
+<body class="bg-dark">
+<form class="form-signin" th:action="@{/submit-registration}" th:object="${registrationModel}" method="post">
+    <div class="text-center">
+        <img class="img-fluid" style="width: 50%; height: 50%" src="img/logo.png" alt="Logo">
+    </div>
+    <h1 class="h1 mb-5 font-weight-bold text-light text-center">ShareThis</h1>
+    <h3 class="h3 mb-3 font-weight-bold text-light text-center">Registration</h3>
+
+    <div th:if="${error} != null" class="mb-2 alert alert-danger" role="alert">
+        <span th:text="${error}"></span>
+    </div>
+
+    <label for="inputName" class="sr-only"></label>
+    <h6 class="h6 mb-1 text-muted">NAME</h6>
+    <input id="inputName" class="form-control p-2" th:field="*{name}" required autofocus>
+
+    <label for="inputEmail" class="sr-only"></label>
+    <h6 class="h6 mb-1 text-muted">E-MAIL</h6>
+    <input type="email" id="inputEmail" class="form-control p-2" th:field="*{email}" required autofocus>
+
+    <label for="inputPassword" class="sr-only"></label>
+    <h6 class="h6 mb-1 text-muted">PASSWORD</h6>
+    <input type="password" id="inputPassword" class="form-control p-2" th:field="*{password}" required>
+
+    <div class="mt-5 mb-3 d-grid gap-1">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+    </div>
+
+    <div class="mt-3 d-grid gap-1">
+        <a class="text-info text-center" th:href="@{/}" th:method="get">Already have an account? Click to log in</a>
+    </div>
+
+    <p class="mt-5 mb-3 text-muted text-center">OOAD Team 4 &copy; 2020</p>
+</form>
+</body>
+
+</html>
