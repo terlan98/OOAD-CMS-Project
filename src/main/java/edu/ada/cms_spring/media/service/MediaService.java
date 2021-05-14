@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Provides media-related services. Expects all video files to be located under 'resources/video'.
+ */
 public class MediaService implements IMediaService {
 	@Override
 	public List<MediaListDTO> findAll() {

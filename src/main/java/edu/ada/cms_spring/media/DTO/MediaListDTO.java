@@ -1,5 +1,6 @@
 package edu.ada.cms_spring.media.DTO;
 
-import java.nio.file.Path;
-
+/**
+ * Stores information about a media file
+ */
 public record MediaListDTO(String title, String duration, String path, String thumbnailName) {}

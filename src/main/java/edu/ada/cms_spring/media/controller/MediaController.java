@@ -12,6 +12,9 @@ import reactor.core.publisher.Mono;
 
 @Controller
 @RequestMapping("/media")
+/**
+ * Handles all media-related requests.
+ */
 public class MediaController
 {
 	private final MediaService mediaService;
@@ -29,7 +32,7 @@ public class MediaController
 	@GetMapping
 	String showAll(Model model)
 	{
-		if (authService.isSessionExpired()) return "redirect:/"; //TODO UNCOMMENT
+		if (authService.isSessionExpired()) return "redirect:/";
 		
 		var mediaList = mediaService.findAll();
 		model.addAttribute("media", mediaList);

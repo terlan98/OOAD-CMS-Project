@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 
 @Controller
+/**
+ * Handles the login and registration related requests. Logs all interactions.
+ */
 public class AuthController
 {
 	private Logger logger = LoggerFactory.getLogger(AuthController.class);
